@@ -1,13 +1,13 @@
 
-const CACHE_VERSION = '0.4_2024.10.25.05.12';
+const CACHE_VERSION = '0.4_2024.10.25.05.38';
 const CACHE_NAME = `game-cache-${CACHE_VERSION}`;
 
 const CACHE_TARGETS = [
     'index.html',
-    'Build/*.js',
-    'Build/*.wasm',
-    'Build/*.data',
-    'Build/*.framework.js',
+    'Build/WEB.js',
+    'Build/WEB.wasm',
+    'Build/WEB.data',
+    'Build/WEB.framework.js',
     'TemplateData/*'
 ];
 
