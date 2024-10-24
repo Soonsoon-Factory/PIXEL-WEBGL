@@ -28,8 +28,11 @@
                     console.log('ServiceWorker 등록됨:', registration.scope);
 
                     registration.addEventListener('updatefound', () => {
+                         console.log('ServiceWorker updatefound:', registration.installing);
                         const newWorker = registration.installing;
                         newWorker.addEventListener('statechange', () => {
+                            console.log(newWorker.state);
+                            console.log(navigator.serviceWorker.controller);
                             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                                 if (confirm('새로운 버전이 있습니다. 지금 업데이트하시겠습니까?')) {
                                     newWorker.postMessage('skipWaiting');
