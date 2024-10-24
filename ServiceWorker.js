@@ -1,6 +1,6 @@
 
-const CACHE_VERSION = '0.4_2024.10.25.07.57';
-const CACHE_NAME = `game-cache-0.4_2024.10.25.07.57`;
+const CACHE_VERSION = '0.4_2024.10.25.07.58';
+const CACHE_NAME = `game-cache-0.4_2024.10.25.07.58`;
 
 const CACHE_TARGETS = [
     'index.html',
