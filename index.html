@@ -9,23 +9,9 @@
     <link rel="manifest" href="manifest.webmanifest">
   
 <script>
-
-</script>
-</head>
-  <body>
-    <div id="unity-container">
-      <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-    </div>
-    <script>
-      window.addEventListener("load", function () {
-        if ("serviceWorker" in navigator) {
+    if ('serviceWorker' in navigator) {
+        console.log('ServiceWorker :', navigator);
+        window.addEventListener('load', async () => {
             try {
                 const registration = await navigator.serviceWorker.register('ServiceWorker.js');
                 console.log('ServiceWorker 등록됨:', registration.scope);
@@ -52,6 +38,25 @@
             } catch (err) {
                 console.error('ServiceWorker 등록 실패:', err);
             }
+        });
+    }
+</script>
+</head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("ServiceWorker.js");
         }
       });
 
