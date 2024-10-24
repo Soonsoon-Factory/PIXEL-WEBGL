@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
-</head>
+  </head>
   <body>
     <div id="unity-container">
       <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
@@ -22,36 +22,10 @@
     <script>
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-            try {
-                const registration = navigator.serviceWorker.register('ServiceWorker.js');
-                console.log('ServiceWorker 등록됨:', registration.scope);
-
-                registration.addEventListener('updatefound', () => {
-                    const newWorker = registration.installing;
-                    newWorker.addEventListener('statechange', () => {
-                        console.log(newWorker.state);
-                        console.log(navigator.serviceWorker.controller);
-                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                            if (confirm('새로운 버전이 있습니다. 지금 업데이트하시겠습니까?')) {
-                                newWorker.postMessage('skipWaiting');
-                            }
-                        }
-                    });
-                });
-
-                let refreshing;
-                navigator.serviceWorker.addEventListener('controllerchange', () => {
-                    if (refreshing) return;
-                    refreshing = true;
-                    console.log('reload:', refreshing);
-                    window.location.reload();
-                });
-
-            } catch (err) {
-                console.error('ServiceWorker 등록 실패:', err);
-            }
+          navigator.serviceWorker.register("ServiceWorker.js");
         }
       });
+
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
