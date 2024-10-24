@@ -55,6 +55,12 @@ self.addEventListener('fetch', function (e) {
   );
 });
 
+self.addEventListener('activate', event => {
+    console.log('[ServiceWorker] Activated');
+    // 새로운 서비스 워커가 활성화되면 즉시 페이지를 제어
+    event.waitUntil(self.clients.claim());
+});
+
 self.addEventListener('message', function (event) {
     if (event.data === 'skipWaiting') {
         self.skipWaiting();
