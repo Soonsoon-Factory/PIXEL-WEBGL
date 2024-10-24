@@ -1,6 +1,6 @@
 
-const CACHE_VERSION = '0.4_2024.10.25.07.14';
-const CACHE_NAME = `game-cache-0.4_2024.10.25.07.14`;
+const CACHE_VERSION = '0.4_2024.10.25.07.46';
+const CACHE_NAME = `game-cache-0.4_2024.10.25.07.46`;
 
 const CACHE_TARGETS = [
     'index.html',
@@ -53,4 +53,10 @@ self.addEventListener('fetch', function (e) {
       return response;
     })()
   );
+});
+
+self.addEventListener('message', function (event) {
+    if (event.data === 'skipWaiting') {
+        self.skipWaiting();
+    }
 });
