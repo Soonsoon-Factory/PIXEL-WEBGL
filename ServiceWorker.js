@@ -1,5 +1,5 @@
 
-const CACHE_VERSION = '0.4_2024.10.25.04.54';
+const CACHE_VERSION = '0.4_2024.10.25.05.09';
 const CACHE_NAME = `game-cache-${CACHE_VERSION}`;
 
 const CACHE_TARGETS = [
@@ -42,7 +42,6 @@ self.addEventListener('fetch', event => {
     event.respondWith(
         fetch(event.request)
             .then(response => {
-                // framework.js는 항상 네트워크에서 가져오기
                 if (event.request.url.includes('.framework.js')) {
                     return response;
                 }
