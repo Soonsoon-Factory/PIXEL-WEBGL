@@ -13,7 +13,7 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', async () => {
                 try {
-                    const registration = await navigator.serviceWorker.register('ServiceWorker.js');
+                    const registration = await navigator.serviceWorker.register('service-worker.js');
                     console.log('ServiceWorker 등록됨:', registration.scope);
                     
                     if (registration.active) {
@@ -48,7 +48,11 @@
       <div id="unity-warning"> </div>
     </div>
     <script>
-
+      window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("ServiceWorker.js");
+        }
+      });
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -90,7 +94,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "PixelEditor",
-        productVersion: "0.14",
+        productVersion: "0.1",
         showBanner: unityShowBanner,
       };
 
