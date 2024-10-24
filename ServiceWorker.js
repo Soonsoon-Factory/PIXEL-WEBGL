@@ -32,7 +32,7 @@ self.addEventListener('install', function (e) {
     (async function () {
       const cache = await caches.open(CACHE_NAME);
       console.log('[Service Worker] Caching all: app shell and content');
-      await cache.addAll(contentToCache);
+      await cache.addAll(CACHE_TARGETS);
     })()
   );
 });
