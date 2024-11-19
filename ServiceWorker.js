@@ -1,12 +1,12 @@
 
-const CACHE_VERSION = '0.4_2024.11.18.18.40';
+const CACHE_VERSION = '0.4_2024.11.19.09.48';
 const CACHE_NAME = `game-cache-${CACHE_VERSION}`;
 
 const CACHE_TARGETS = [
     'Build/WEBGZIP.loader.js',
-    'Build/WEBGZIP.framework.js',
-    'Build/WEBGZIP.data',
-    'Build/WEBGZIP.wasm',
+    'Build/WEBGZIP.framework.js.unityweb',
+    'Build/WEBGZIP.data.unityweb',
+    'Build/WEBGZIP.wasm.unityweb',
     'TemplateData/style.css'
 ];
 
