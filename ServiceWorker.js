@@ -1,5 +1,5 @@
 
-const CACHE_VERSION = '0.4_2024.12.05.18.18';
+const CACHE_VERSION = '0.4_2024.12.06.09.38';
 const CACHE_NAME = `game-cache-${CACHE_VERSION}`;
 
 const CACHE_TARGETS = [
